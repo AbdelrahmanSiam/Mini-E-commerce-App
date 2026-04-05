@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:mini_ecommerce/core/theme/app_colors.dart';
 
-class IconButton extends StatelessWidget {
-  const IconButton({
+class CustomIconButton extends StatelessWidget {
+  const CustomIconButton({
     super.key,
     required this.icon,
     required this.onTap,

@@ -6,10 +6,12 @@ class CartViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomViewBody(child: Column(
-      children: [
-        
-      ],
-    ));
+    return CustomViewBody(
+      child: Column(
+        children: [
+          
+        ],
+      ),
+    );
   }
 }
