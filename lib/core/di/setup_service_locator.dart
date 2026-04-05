@@ -9,6 +9,12 @@ import 'package:mini_ecommerce/features/auth/domain/repo/auth_repo.dart';
 import 'package:mini_ecommerce/features/auth/domain/use_cases/login_use_case/login_use_case.dart';
 import 'package:mini_ecommerce/features/auth/domain/use_cases/register_use_case/register_use_case.dart';
 import 'package:mini_ecommerce/features/auth/presentation/manager/cubits/auth_cubit/auth_cubit.dart';
+import 'package:mini_ecommerce/features/order/data/data_sources/order_remote_data_source.dart';
+import 'package:mini_ecommerce/features/order/data/data_sources/order_remote_data_source_impl.dart';
+import 'package:mini_ecommerce/features/order/data/repo/order_repo_impl.dart';
+import 'package:mini_ecommerce/features/order/domain/repo/order_repo.dart';
+import 'package:mini_ecommerce/features/order/domain/use_cases/submit_order_use_case.dart';
+import 'package:mini_ecommerce/features/order/presentation/manager/cubits/order_cubit/order_cubit.dart';
 import 'package:mini_ecommerce/features/products/data/data_sources/products_remote_data_source.dart';
 import 'package:mini_ecommerce/features/products/data/repo/products_repo_impl.dart';
 import 'package:mini_ecommerce/features/products/domain/repo/products_repo.dart';
@@ -43,7 +49,7 @@ void setupServiceLocator() {
       registerUseCase: getIt<RegisterUseCase>(),
     ),
   );
-    // ── Products ──────────────────────────────────────────────
+  // ── Products ──────────────────────────────────────────────
   getIt.registerSingleton<ProductsRemoteDataSource>(
     ProductsRemoteDataSourceImpl(apiService: getIt<ApiService>()),
   );
@@ -55,5 +61,18 @@ void setupServiceLocator() {
   );
   getIt.registerFactory<ProductsCubit>(
     () => ProductsCubit(fetchProductsUseCase: getIt<FetchProductsUseCase>()),
+  );
+  // ── orders ──────────────────────────────────────────────
+  getIt.registerSingleton<OrderRemoteDataSource>(
+    OrderRemoteDataSourceImpl(apiService: getIt<ApiService>()),
+  );
+  getIt.registerSingleton<OrderRepo>(
+    OrderRepoImpl(remoteDataSource: getIt<OrderRemoteDataSource>()),
+  );
+  getIt.registerFactory<SubmitOrderUseCase>(
+    () => SubmitOrderUseCase(orderRepo: getIt<OrderRepo>()),
+  );
+  getIt.registerFactory<OrderCubit>(
+    () => OrderCubit(submitOrderUseCase: getIt<SubmitOrderUseCase>()),
   );
 }

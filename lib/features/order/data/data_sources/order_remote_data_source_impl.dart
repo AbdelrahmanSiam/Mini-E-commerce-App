@@ -15,7 +15,7 @@ class OrderRemoteDataSourceImpl extends OrderRemoteDataSource {
     required double total,
   }) async {
     final data = await apiService.post(
-      endPoint: '/carts',
+      endPoint: '/carts/add',
       body: {
         'userId': 1,
         'date': DateTime.now().toIso8601String(),
