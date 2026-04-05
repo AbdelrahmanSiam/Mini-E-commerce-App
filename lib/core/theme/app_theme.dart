@@ -49,9 +49,12 @@ abstract class AppTheme {
           fillColor: AppColors.surface,
           hintStyle: const TextStyle(
             color: AppColors.textSecondary,
-            fontSize: 14,
+            fontSize: 16,
+            fontWeight: FontWeight.w600,
             fontFamily: 'Montserrat',
           ),
+          suffixIconColor: AppColors.textSecondary,
+          prefixIconColor: AppColors.textSecondary,
           contentPadding:
               const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
           enabledBorder: OutlineInputBorder(

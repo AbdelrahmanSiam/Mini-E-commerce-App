@@ -21,6 +21,7 @@ class LoginViewBody extends StatelessWidget {
         children: [
           Spacer(),
           AppLogo(),
+          const SizedBox(height: 16),
           AuthCard(
             children: [
               LoginTaglines(),

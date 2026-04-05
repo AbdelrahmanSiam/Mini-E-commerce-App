@@ -4,14 +4,15 @@ class CustomButton extends StatelessWidget {
   const CustomButton({
     super.key,
     required this.isLoading,
-    required this.buttonName,
+    required this.buttonName, required this.onPressed,
   });
   final bool isLoading;
   final String buttonName;
+  final void Function() onPressed;
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed: () {},
+      onPressed: onPressed,
       child: isLoading
           ? const SizedBox(
               height: 20,

@@ -21,14 +21,16 @@ class _LoginFieldsState extends State<LoginFields> {
       child: Column(
         children: [
           AuthTextField(
+            label: 'USER NAME',
             hint: 'Username',
             prefixIcon: Icons.person_outline,
             controller: usernameController,
             validator: (value) =>
                 value == null || value.isEmpty ? 'Enter your username' : null,
           ),
-          const SizedBox(height: 12),
+          const SizedBox(height: 16),
           AuthTextField(
+            label: 'PASSWORD',
             hint: 'Password',
             prefixIcon: Icons.lock_outline,
             controller: passwordController,
@@ -38,7 +40,15 @@ class _LoginFieldsState extends State<LoginFields> {
           ),
           ForgetPassword(),
           const SizedBox(height: 16),
-          CustomButton(isLoading: false, buttonName: 'Sign in'),
+          CustomButton(
+            isLoading: false,
+            buttonName: 'Sign in',
+            onPressed: () {
+              if (formKey.currentState!.validate()) {
+                // go to home
+              }
+            },
+          ),
         ],
       ),
     );
