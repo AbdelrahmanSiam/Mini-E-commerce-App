@@ -8,7 +8,7 @@ A Flutter mini e-commerce application built as a hiring task, demonstrating Clea
 
 | Login | Register | Products |
 |---|---|---|
-| ![Login](screenshots/login.png) | ![Register](screenshots/register.png) | ![Products](screenshots/products.png) |
+| ![Login](screenshots/lgoin.png) | ![Register](screenshots/register.png) | ![Products](screenshots/products.png) |
 
 | Cart | Checkout | Order |
 |---|---|---|
