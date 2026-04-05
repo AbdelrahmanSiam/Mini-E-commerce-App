@@ -9,6 +9,11 @@ import 'package:mini_ecommerce/features/auth/domain/repo/auth_repo.dart';
 import 'package:mini_ecommerce/features/auth/domain/use_cases/login_use_case/login_use_case.dart';
 import 'package:mini_ecommerce/features/auth/domain/use_cases/register_use_case/register_use_case.dart';
 import 'package:mini_ecommerce/features/auth/presentation/manager/cubits/auth_cubit/auth_cubit.dart';
+import 'package:mini_ecommerce/features/products/data/data_sources/products_remote_data_source.dart';
+import 'package:mini_ecommerce/features/products/data/repo/products_repo_impl.dart';
+import 'package:mini_ecommerce/features/products/domain/repo/products_repo.dart';
+import 'package:mini_ecommerce/features/products/domain/use_cases/fetch_products_use_case.dart';
+import 'package:mini_ecommerce/features/products/presentation/manager/cubits/products_cubit/products_cubit.dart';
 
 final getIt = GetIt.instance;
 
@@ -37,5 +42,18 @@ void setupServiceLocator() {
       loginUseCase: getIt<LoginUseCase>(),
       registerUseCase: getIt<RegisterUseCase>(),
     ),
+  );
+    // ── Products ──────────────────────────────────────────────
+  getIt.registerSingleton<ProductsRemoteDataSource>(
+    ProductsRemoteDataSourceImpl(apiService: getIt<ApiService>()),
+  );
+  getIt.registerSingleton<ProductsRepo>(
+    ProductsRepoImpl(remoteDataSource: getIt<ProductsRemoteDataSource>()),
+  );
+  getIt.registerFactory<FetchProductsUseCase>(
+    () => FetchProductsUseCase(productsRepo: getIt<ProductsRepo>()),
+  );
+  getIt.registerFactory<ProductsCubit>(
+    () => ProductsCubit(fetchProductsUseCase: getIt<FetchProductsUseCase>()),
   );
 }

@@ -16,9 +16,9 @@ class LoginViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomViewBody(
       child: Column(
+        mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Spacer(),
           AppLogo(iconColor: AppColors.primary),
           const SizedBox(height: 16),
           AuthCard(
@@ -39,7 +39,6 @@ class LoginViewBody extends StatelessWidget {
               ),
             ],
           ),
-          Spacer(),
         ],
       ),
     );
