@@ -29,7 +29,6 @@ class _LoginFieldsState extends State<LoginFields> {
       username: usernameController.text.trim(),
       password: passwordController.text.trim(),
     );
-    // go to home
   }
 
   @override

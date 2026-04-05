@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mini_ecommerce/core/widgets/custom_app_button.dart';
+import 'package:mini_ecommerce/features/auth/presentation/manager/cubits/auth_cubit/auth_cubit.dart';
 import 'package:mini_ecommerce/features/auth/presentation/views/widgets/auth_text_field.dart';
 import 'package:mini_ecommerce/features/auth/presentation/views/widgets/forget_password.dart';
 
@@ -16,6 +18,25 @@ class _RegisterFieldsState extends State<RegisterFields> {
   final emailController = TextEditingController();
   final nameController = TextEditingController();
   final confirmController = TextEditingController();
+
+  @override
+  void dispose() {
+    nameController.dispose();
+    emailController.dispose();
+    passwordController.dispose();
+    confirmController.dispose();
+    super.dispose();
+  }
+
+  void onRegister() {
+    if (!formKey.currentState!.validate()) return;
+    context.read<AuthCubit>().register(
+      name: nameController.text.trim(),
+      email: emailController.text.trim(),
+      password: passwordController.text.trim(),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -60,13 +81,13 @@ class _RegisterFieldsState extends State<RegisterFields> {
                 v != passwordController.text ? 'Passwords do not match' : null,
           ),
           const SizedBox(height: 24),
-          CustomButton(
-            isLoading: false,
-            buttonName: 'Register',
-            onPressed: () {
-              if (formKey.currentState!.validate()) {
-                // go to home
-              }
+          BlocBuilder<AuthCubit, AuthState>(
+            builder: (context, state) {
+              return CustomButton(
+                isLoading: state is AuthLoadingState,
+                buttonName: 'Register',
+                onPressed: () => onRegister,
+              );
             },
           ),
         ],
