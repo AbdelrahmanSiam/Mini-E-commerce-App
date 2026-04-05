@@ -22,7 +22,7 @@ class _LoginFieldsState extends State<LoginFields> {
         children: [
           AuthTextField(
             label: 'USER NAME',
-            hint: 'Username',
+            hint: 'Abderlahman',
             prefixIcon: Icons.person_outline,
             controller: usernameController,
             validator: (value) =>
@@ -31,7 +31,7 @@ class _LoginFieldsState extends State<LoginFields> {
           const SizedBox(height: 16),
           AuthTextField(
             label: 'PASSWORD',
-            hint: 'Password',
+            hint: '****',
             prefixIcon: Icons.lock_outline,
             controller: passwordController,
             isPassword: true,

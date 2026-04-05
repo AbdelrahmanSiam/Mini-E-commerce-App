@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:mini_ecommerce/core/router/app_router.dart';
 import 'package:mini_ecommerce/core/styles/app_styles.dart';
 import 'package:mini_ecommerce/core/theme/app_colors.dart';
 import 'package:mini_ecommerce/core/widgets/custom_view_body.dart';
@@ -34,6 +36,9 @@ class LoginViewBody extends StatelessWidget {
               NavRow(
                 pageTagline: "Don't have an account? ",
                 buttonName: 'Register',
+                onTap: () {
+                  GoRouter.of(context).push(AppRouter.register);
+                },
               ),
             ],
           ),
