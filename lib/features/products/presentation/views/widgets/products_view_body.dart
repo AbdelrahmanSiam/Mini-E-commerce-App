@@ -6,9 +6,8 @@ class ProductsViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomViewBody(widget: Column(
-      children: [
-        
+    return CustomViewBody(widget: Column(children: [
+
       ],
     ));
   }
