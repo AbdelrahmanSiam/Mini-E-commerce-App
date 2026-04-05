@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:mini_ecommerce/core/styles/app_styles.dart';
 import 'package:mini_ecommerce/core/widgets/custom_view_body.dart';
 import 'package:mini_ecommerce/core/widgets/customa_auth_card.dart';
 import 'package:mini_ecommerce/features/auth/presentation/views/widgets/app_logo.dart';
+import 'package:mini_ecommerce/features/auth/presentation/views/widgets/auth_text_field.dart';
+import 'package:mini_ecommerce/features/auth/presentation/views/widgets/login_fields.dart';
+import 'package:mini_ecommerce/features/auth/presentation/views/widgets/login_taglines.dart';
 
 class LoginViewBody extends StatelessWidget {
   const LoginViewBody({super.key});
@@ -10,11 +14,17 @@ class LoginViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomViewBody(
       widget: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           AppLogo(),
-          AuthCard(children: [
-            
-          ],)
+          AuthCard(
+            children: [
+              LoginTaglines(),
+              const SizedBox(height: 24),
+              LoginFields(),
+              const SizedBox(height: 8),
+            ],
+          ),
         ],
       ),
     );

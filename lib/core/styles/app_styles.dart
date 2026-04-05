@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mini_ecommerce/core/theme/app_colors.dart';
 
 double getResponsiveFontSize(BuildContext context, {required double fontSize}) {
   final double width = MediaQuery.sizeOf(context).width;
@@ -53,6 +54,12 @@ abstract class AppStyles {
     fontSize: getResponsiveFontSize(context, fontSize: 24),
     fontWeight: FontWeight.w700,
     color: Theme.of(context).colorScheme.onSurface,
+  );
+  static TextStyle textPrimary20(BuildContext context) => TextStyle(
+    fontSize: getResponsiveFontSize(context, fontSize: 20),
+    fontWeight: FontWeight.w700,
+    color: AppColors.textPrimary,
+    fontFamily: "Montserrat",
   );
 
   static TextStyle buttonSemiBold15(BuildContext context) => TextStyle(
