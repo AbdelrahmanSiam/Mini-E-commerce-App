@@ -13,7 +13,6 @@ class SuccessProductsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // final gridProducts = _gridProducts;
     return Column(
       children: [
         Padding(

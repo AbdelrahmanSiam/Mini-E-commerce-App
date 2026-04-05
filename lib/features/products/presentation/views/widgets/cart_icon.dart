@@ -19,14 +19,15 @@ class CartIcon extends StatelessWidget {
             const Icon(
               Icons.shopping_cart_outlined,
               color: AppColors.textPrimary,
+              size: 40,
             ),
             if (count > 0)
               Positioned(
                 right: -6,
                 top: -6,
                 child: Container(
-                  width: 16,
-                  height: 16,
+                  width: 22,
+                  height: 22,
                   decoration: const BoxDecoration(
                     color: AppColors.primary,
                     shape: BoxShape.circle,
@@ -34,7 +35,9 @@ class CartIcon extends StatelessWidget {
                   child: Center(
                     child: Text(
                       '$count',
-                      style: AppStyles.taglineRegular11(context),
+                      style: AppStyles.taglineRegular11(
+                        context,
+                      ).copyWith(color: Colors.white),
                     ),
                   ),
                 ),
