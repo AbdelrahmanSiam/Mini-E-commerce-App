@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:mini_ecommerce/core/widgets/custom_app_button.dart';
 import 'package:mini_ecommerce/features/auth/presentation/views/widgets/auth_text_field.dart';
+import 'package:mini_ecommerce/features/auth/presentation/views/widgets/forget_password.dart';
 
 class LoginFields extends StatefulWidget {
   const LoginFields({super.key});
@@ -34,6 +36,9 @@ class _LoginFieldsState extends State<LoginFields> {
             validator: (value) =>
                 value == null || value.length < 4 ? 'Min 4 characters' : null,
           ),
+          ForgetPassword(),
+          const SizedBox(height: 16),
+          CustomButton(isLoading: false, buttonName: 'Sign in'),
         ],
       ),
     );

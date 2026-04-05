@@ -8,6 +8,7 @@ import 'package:mini_ecommerce/features/auth/presentation/views/widgets/auth_tex
 import 'package:mini_ecommerce/features/auth/presentation/views/widgets/forget_password.dart';
 import 'package:mini_ecommerce/features/auth/presentation/views/widgets/login_fields.dart';
 import 'package:mini_ecommerce/features/auth/presentation/views/widgets/login_taglines.dart';
+import 'package:mini_ecommerce/features/auth/presentation/views/widgets/nav_row.dart';
 
 class LoginViewBody extends StatelessWidget {
   const LoginViewBody({super.key});
@@ -18,18 +19,21 @@ class LoginViewBody extends StatelessWidget {
       widget: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
+          Spacer(),
           AppLogo(),
           AuthCard(
             children: [
               LoginTaglines(),
               const SizedBox(height: 24),
               LoginFields(),
-              const SizedBox(height: 8),
-              ForgetPassword(),
               const SizedBox(height: 16),
-
+              NavRow(
+                pageTagline: "Don't have an account? ",
+                buttonName: 'Register',
+              ),
             ],
           ),
+          Spacer(),
         ],
       ),
     );
