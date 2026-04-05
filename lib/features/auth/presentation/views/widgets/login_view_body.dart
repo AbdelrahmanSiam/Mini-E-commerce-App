@@ -15,7 +15,7 @@ class LoginViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomViewBody(
-      widget: Column(
+      child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Spacer(),

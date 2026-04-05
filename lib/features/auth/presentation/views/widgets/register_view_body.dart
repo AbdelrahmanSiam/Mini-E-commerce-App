@@ -15,7 +15,7 @@ class RegisterViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomViewBody(
-      widget: AuthCard(
+      child: AuthCard(
         children: [
           AppLogo(iconColor: Colors.white, backgroundColor: AppColors.primary),
           const SizedBox(height: 24),

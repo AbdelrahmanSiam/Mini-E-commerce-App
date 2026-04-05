@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class CustomViewBody extends StatelessWidget {
-  const CustomViewBody({super.key, required this.widget});
-  final Widget widget;
+  const CustomViewBody({super.key, required this.child});
+  final Widget child;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -12,13 +12,11 @@ class CustomViewBody extends StatelessWidget {
           return SingleChildScrollView(
             child: ConstrainedBox(
               constraints: BoxConstraints(minHeight: constraints.maxHeight),
-              child: IntrinsicHeight(
-                child: GestureDetector(
-                  onTap: () {
-                    FocusScope.of(context).unfocus();
-                  },
-                  child: Center(child: widget),
-                ),
+              child: GestureDetector(
+                onTap: () {
+                  FocusScope.of(context).unfocus();
+                },
+                child: Center(child: child),
               ),
             ),
           );
