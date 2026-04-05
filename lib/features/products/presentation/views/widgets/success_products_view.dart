@@ -11,33 +11,14 @@ class SuccessProductsView extends StatelessWidget {
  final bool isLoading;
  final List<ProductEntity> products;
 
-  static const ProductEntity _placeholder = ProductEntity(
-    id: 0,
-    title: '',
-    price: 0,
-    image: '',
-    category: '',
-    inStock: true,
-  );
-
-  List<ProductEntity> get _gridProducts {
-    if (isLoading && products.isEmpty) {
-      return List<ProductEntity>.filled(6, _placeholder);
-    }
-    return products;
-  }
-
   @override
   Widget build(BuildContext context) {
-    final gridProducts = _gridProducts;
+    // final gridProducts = _gridProducts;
     return Column(
       children: [
         Padding(
           padding: const EdgeInsets.fromLTRB(16, 12, 16, 0),
-          child: Text(
-            isLoading && products.isEmpty
-                ? 'Loading products…'
-                : '${products.length} products found',
+          child: Text( '${products.length} products found',
             style: AppStyles.labelSemiBold13(context),
           ),
         ),
@@ -52,9 +33,9 @@ class SuccessProductsView extends StatelessWidget {
                 mainAxisSpacing: 12,
                 childAspectRatio: 0.8,
               ),
-              itemCount: gridProducts.length,
+              itemCount: products.length,
               itemBuilder: (context, index) {
-                final product = gridProducts[index];
+                final product = products[index];
                 return ProductCard(
                   product: product,
                   onAddToCart: () {},
