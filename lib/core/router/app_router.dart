@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:mini_ecommerce/features/auth/presentation/views/register_view.dart';
+import 'package:mini_ecommerce/features/cart/presentation/view/cart_view.dart';
 import 'package:mini_ecommerce/features/products/presentation/products_view.dart';
 import '../../features/auth/presentation/views/login_view.dart';
 
@@ -18,6 +19,7 @@ abstract class AppRouter {
       GoRoute(path: login, builder: (_, __) => const LoginView()),
       GoRoute(path: register, builder: (_, __) => const RegisterView()),
       GoRoute(path: products, builder: (_, __) => const ProductsView()),
+      GoRoute(path: cart, builder: (_, __) => const CartView()),
     ],
   );
 }
