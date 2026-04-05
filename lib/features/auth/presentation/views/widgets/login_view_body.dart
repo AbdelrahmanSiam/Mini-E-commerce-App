@@ -20,11 +20,14 @@ class LoginViewBody extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Spacer(),
-          AppLogo(),
+          AppLogo(iconColor: AppColors.primary),
           const SizedBox(height: 16),
           AuthCard(
             children: [
-              LoginTaglines(),
+              AuthTaglines(
+                tagline1: 'Welcome back',
+                tagline2: 'Sign in to continue',
+              ),
               const SizedBox(height: 24),
               LoginFields(),
               const SizedBox(height: 16),
