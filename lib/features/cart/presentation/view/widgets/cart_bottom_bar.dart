@@ -26,7 +26,12 @@ class CartBottomBar extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text('Total', style: AppStyles.bodyMediumRegular14(context)),
+              Text(
+                'Total',
+                style: AppStyles.priceBold16(
+                  context,
+                ).copyWith(color: Colors.black),
+              ),
               Text(
                 '\$${total.toStringAsFixed(2)}',
                 style: AppStyles.priceBold16(context),
