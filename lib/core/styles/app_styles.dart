@@ -29,7 +29,8 @@ abstract class AppStyles {
   static TextStyle bodyMediumRegular14(BuildContext context) => TextStyle(
     fontSize: getResponsiveFontSize(context, fontSize: 14),
     fontWeight: FontWeight.w400,
-    color: Theme.of(context).colorScheme.onSurface,
+    color: AppColors.textPrimary,
+    fontFamily: "Montserrat",
   );
 
   static TextStyle bodySmallRegular12(BuildContext context) => TextStyle(

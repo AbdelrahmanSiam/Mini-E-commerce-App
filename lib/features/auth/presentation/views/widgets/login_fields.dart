@@ -34,6 +34,7 @@ class _LoginFieldsState extends State<LoginFields> {
             validator: (value) =>
                 value == null || value.length < 4 ? 'Min 4 characters' : null,
           ),
+          
         ],
       ),
     );

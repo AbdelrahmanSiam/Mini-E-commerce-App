@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mini_ecommerce/core/styles/app_styles.dart';
 import 'package:mini_ecommerce/core/theme/app_colors.dart';
 
-class  extends StatefulWidget {
+class AuthTextField extends StatefulWidget {
   final String hint;
   final IconData prefixIcon;
   final bool isPassword;
