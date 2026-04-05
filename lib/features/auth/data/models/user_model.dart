@@ -4,6 +4,7 @@ class UserModel extends UserEntity {
   const UserModel({required super.token});
 
   factory UserModel.fromJson(Map<String, dynamic> json) {
-    return UserModel(token: json['token'] ?? '');
+    final raw = json['accessToken'] ?? json['token'];
+    return UserModel(token: raw?.toString() ?? '');
   }
 }

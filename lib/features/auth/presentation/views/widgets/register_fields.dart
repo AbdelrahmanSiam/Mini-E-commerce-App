@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mini_ecommerce/core/widgets/custom_app_button.dart';
 import 'package:mini_ecommerce/features/auth/presentation/manager/cubits/auth_cubit/auth_cubit.dart';
 import 'package:mini_ecommerce/features/auth/presentation/views/widgets/auth_text_field.dart';
-import 'package:mini_ecommerce/features/auth/presentation/views/widgets/forget_password.dart';
 
 class RegisterFields extends StatefulWidget {
   const RegisterFields({super.key});
@@ -86,7 +85,7 @@ class _RegisterFieldsState extends State<RegisterFields> {
               return CustomButton(
                 isLoading: state is AuthLoadingState,
                 buttonName: 'Register',
-                onPressed: () => onRegister,
+                onPressed: onRegister,
               );
             },
           ),

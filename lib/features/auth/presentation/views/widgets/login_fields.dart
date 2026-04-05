@@ -62,7 +62,7 @@ class _LoginFieldsState extends State<LoginFields> {
               return CustomButton(
                 isLoading: state is AuthLoadingState,
                 buttonName: 'Sign in',
-                onPressed: () => onLogin
+                onPressed: onLogin,
               );
             },
           ),
