@@ -1,6 +1,10 @@
 # mini_ecommerce
 
-A new Flutter project.
+ShopMate — a Flutter mini e-commerce demo (products, cart, checkout) using DummyJSON and Bloc.
+
+## Author
+
+**Abdelrahman Ahmed**
 
 ## Getting Started
 
