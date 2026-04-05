@@ -12,7 +12,7 @@ abstract class AppStyles {
   static TextStyle appNameBold32(BuildContext context) => TextStyle(
     fontSize: getResponsiveFontSize(context, fontSize: 32),
     fontWeight: FontWeight.w700,
-    color: Theme.of(context).colorScheme.onSurface,
+    color: Theme.of(context).colorScheme.primary,
     letterSpacing: 1.2,
     fontFamily: "Montserrat",
   );

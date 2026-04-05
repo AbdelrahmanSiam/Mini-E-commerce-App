@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mini_ecommerce/core/theme/app_colors.dart';
 import 'package:mini_ecommerce/core/widgets/custom_view_body.dart';
+import 'package:mini_ecommerce/core/widgets/customa_auth_card.dart';
 import 'package:mini_ecommerce/features/auth/presentation/views/widgets/app_logo.dart';
 
 class LoginViewBody extends StatelessWidget {
@@ -12,6 +12,9 @@ class LoginViewBody extends StatelessWidget {
       widget: Column(
         children: [
           AppLogo(),
+          AuthCard(children: [
+            
+          ],)
         ],
       ),
     );
