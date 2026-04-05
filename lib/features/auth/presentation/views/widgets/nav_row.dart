@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:mini_ecommerce/core/router/app_router.dart';
 import 'package:mini_ecommerce/core/styles/app_styles.dart';
 import 'package:mini_ecommerce/core/theme/app_colors.dart';
 
@@ -18,7 +20,7 @@ class NavRow extends StatelessWidget {
           Text(pageTagline, style: AppStyles.labelSemiBold13(context)),
           GestureDetector(
             onTap: () {
-              // go to register
+              GoRouter.of(context).push(AppRouter.register);
             },
             child: Text(
               buttonName,

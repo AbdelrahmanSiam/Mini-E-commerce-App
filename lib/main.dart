@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:mini_ecommerce/core/router/app_router.dart';
 import 'package:mini_ecommerce/core/theme/app_theme.dart';
-import 'package:mini_ecommerce/features/auth/presentation/views/login_view.dart';
 
 void main() {
   runApp(const MiniECommerce());
@@ -11,10 +11,10 @@ class MiniECommerce extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       theme: AppTheme.getTheme(),
-      home: LoginView(),
+      routerConfig: AppRouter.router,
     );
   }
 }
